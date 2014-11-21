@@ -1,0 +1,214 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>VRSim3DAPI</ProjectName>
+    <ProjectGuid>{E3D0DD51-D6C5-4DFB-A1B8-40770DC9AF41}</ProjectGuid>
+    <RootNamespace>VRSM3D_APP</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)obj\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)bin\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)obj\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;VRSM3D_APP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>$(3RDPARTY_DIR)\include;$(OSG_DIR)\include;$(OSGEARTH_DIR)\include;..\include;$(SILVERLINING_PATH)\Public Headers;$(TRITON_PATH)\Public Headers;$(QT_DIR)\include;$(QT_DIR)\include\QtCore;$(QT_DIR)\include\Qt</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\BasicSDK\3rdParty\lib;G:\zqgao\osg3.2-osgearth2.5\osg3.2\lib;G:\zqgao\osg3.2-osgearth2.5\osgearth2.5\lib\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(3RDPARTY_DIR)\include;$(OSG_DIR)\include;$(OSGEARTH_DIR)\include;..\include;$(SILVERLINING_PATH)\Public Headers;$(TRITON_PATH)\Public Headers;$(QT_DIR)\include;$(QT_DIR)\include\QtCore;$(QT_DIR)\include\Qt;</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;VRSim3D_LIBRARY;_QTWIND;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <ProgramDataBaseFileName>$(SolutionDir)bin\$(TargetName).pdb</ProgramDataBaseFileName>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;SilverLining-MT-DLL.lib;Triton-MT-DLL.lib;OpenThreads.lib;osg.lib;osgDB.lib;osgFX.lib;osgUtil.lib;osgGA.lib;osgViewer.lib;osgText.lib;osgParticle.lib;osgSim.lib;osgShadow.lib;osgManipulator.lib;osgWidget.lib;opengl32.lib;osgEarth.lib;osgEarthAnnotation.lib;osgEarthFeatures.lib;osgEarthUtil.lib;osgEarthSymbology.lib;osgdb_osgearth_ocean_triton.lib;QtCore4.lib;QtGui4.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OSG_DIR)\lib;$(OSGEARTH_DIR)\lib;$(QT_DIR)\lib;$(TRITON_PATH)\lib\vc10\win32;$(SILVERLINING_PATH)\lib\vc10\win32;$(3RDPARTY_DIR)\lib</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(SolutionDir)bin\$(TargetName).pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <ImportLibrary>$(SolutionDir)lib\$(TargetName).lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\AnimationPathPlayBackCallback.cpp" />
+    <ClCompile Include="..\src\CameraManager.cpp" />
+    <ClCompile Include="..\src\CommandHandler.cpp" />
+    <ClCompile Include="..\src\CommEffect.cpp" />
+    <ClCompile Include="..\src\CommonFunctions.cpp" />
+    <ClCompile Include="..\src\CompositeSceneView.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\src\CompositeSceneViewBuilder.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\src\ControlBar.cpp" />
+    <ClCompile Include="..\src\DynamicModel.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\src\GlobeBasicFunc.cpp" />
+    <ClCompile Include="..\src\GlobeSceneViewManager.cpp" />
+    <ClCompile Include="..\src\ModelPicker.cpp" />
+    <ClCompile Include="..\src\MouseValueCallback.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\src\MyRotorWash.cpp" />
+    <ClCompile Include="..\src\NodeInfoDrawCallback.cpp" />
+    <ClCompile Include="..\src\RectEffect.cpp" />
+    <ClCompile Include="..\src\RotorWashHandler.cpp" />
+    <ClCompile Include="..\src\SatelliteAnimation.cpp" />
+    <ClCompile Include="..\src\SatelliteGroupManager.cpp" />
+    <ClCompile Include="..\src\ShipWake.cpp" />
+    <ClCompile Include="..\src\SceneView.cpp" />
+    <ClCompile Include="..\src\SceneViewBuilder.cpp" />
+    <ClCompile Include="..\src\SceneViewManager.cpp" />
+    <ClCompile Include="..\src\Signal.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\src\SilverLiningCloudsDrawable.cpp" />
+    <ClCompile Include="..\src\SilverLiningContext.cpp" />
+    <ClCompile Include="..\src\SilverLiningNode.cpp" />
+    <ClCompile Include="..\src\SilverLiningSkyDrawable.cpp" />
+    <ClCompile Include="..\src\SingleSceneView.cpp" />
+    <ClCompile Include="..\src\SingleSceneView-QT.cpp" />
+    <ClCompile Include="..\src\SingleSceneViewBuilder.cpp" />
+    <ClCompile Include="..\src\SmallSceneViewManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="..\src\SphereSegment.cpp" />
+    <ClCompile Include="..\src\UtileMethod.cpp" />
+    <ClCompile Include="..\src\ViewPosInfoText.cpp" />
+    <ClCompile Include="..\src\VRPrecipitation.cpp" />
+    <ClCompile Include="..\src\VRPrecipitationManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\AnimationPathPlayBackCallback.h" />
+    <ClInclude Include="..\include\CameraManager.h" />
+    <ClInclude Include="..\include\CommandHandler.h" />
+    <ClInclude Include="..\include\CommEffect.h" />
+    <ClInclude Include="..\include\CommonFunctions.h" />
+    <ClInclude Include="..\include\ControlBar.h" />
+    <ClInclude Include="..\include\DynamicModel.h" />
+    <ClInclude Include="..\include\ModelPicker.h" />
+    <ClInclude Include="..\include\MyRotorWash.h" />
+    <ClInclude Include="..\include\NodeInfoDrawCallback.h" />
+    <ClInclude Include="..\include\RectEffect.h" />
+    <ClInclude Include="..\include\RotorWashHandler.h" />
+    <ClInclude Include="..\include\SatelliteAnimation.h" />
+    <ClInclude Include="..\include\SatelliteGroupManager.h" />
+    <ClInclude Include="..\include\ShipWake.h" />
+    <ClInclude Include="..\include\SilverLiningCloudsDrawable.h" />
+    <ClInclude Include="..\include\SilverLiningContext.h" />
+    <ClInclude Include="..\include\SilverLiningNode.h" />
+    <ClInclude Include="..\include\SilverLiningSkyDrawable.h" />
+    <ClInclude Include="..\include\SingleSceneView-QT.h" />
+    <ClInclude Include="..\include\SphereSegment.h" />
+    <ClInclude Include="..\include\VRPrecipitation.h" />
+    <ClInclude Include="..\include\VRPrecipitationManager.h" />
+    <CustomBuildStep Include="..\include\CompositeSceneView.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+    <CustomBuildStep Include="..\include\CompositeSceneViewBuilder.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+    <ClInclude Include="..\include\Export.h" />
+    <CustomBuildStep Include="..\include\GlobeSceneViewManager.h" />
+    <CustomBuildStep Include="..\include\MouseCoordsHandler.h" />
+    <CustomBuildStep Include="..\include\MouseValueCallback.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+    <ClInclude Include="..\include\GlobeBasicFunc.h" />
+    <ClInclude Include="..\include\SceneView.h" />
+    <CustomBuildStep Include="..\include\SceneViewBuilder.h" />
+    <CustomBuildStep Include="..\include\SceneViewManager.h" />
+    <CustomBuildStep Include="..\include\Signal.h" />
+    <ClInclude Include="..\include\SingleSceneView.h" />
+    <CustomBuildStep Include="..\include\SingleSceneViewBuilder.h" />
+    <CustomBuildStep Include="..\include\SmallSceneViewManager.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+    <ClInclude Include="..\include\UtileMethod.h" />
+    <ClInclude Include="..\include\ViewPosInfoText.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CodesInfor.xlsx" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
