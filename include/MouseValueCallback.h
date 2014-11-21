@@ -1,0 +1,16 @@
+//////////////////////////////////////////////////////////////////////////
+///文件名：鼠标
+///创建者：高志清
+///创建时间：2013年7月19日
+///内容描述：提供一些常用且比较独立函数
+//////////////////////////////////////////////////////////////////////////
+#ifndef MOUSE_VALUE_CALLBACK_H
+#define MOUSE_VALUE_CALLBACK_H 1	
+
+class MouseValueCallback
+{
+public:
+	MouseValueCallback(void);
+	~MouseValueCallback(void);
+};
+#endif
